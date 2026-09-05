@@ -4,7 +4,7 @@
 
 [site]
 lang = "en" # 中文页面可以改为 zh-CN，并自行翻译下面的标题
-title = "Fengling Chen · Academic Homepage"
+title = "Fengling Chen · Homepage"
 description = "Fengling Chen, Ph.D. student in Applied Mathematics at Peking University. Research in machine learning, deep learning theory, optimization, scaling laws, and large language model pretraining."
 updated = "September 2026"
 
@@ -63,7 +63,7 @@ group = "Optimization Theory & Scaling Laws"
 year = "2025"
 venue = "NeurIPS 2025 Spotlight"
 neutral = false
-title = "Functional scaling laws in kernel regression: Loss dynamics and learning rate schedules"
+title = "Functional Scaling Laws in Kernel Regression: Loss Dynamics and Learning Rate Schedules"
 authors = "Binghui Li*, **Fengling Chen***, Zixun Huang*, Lean Wang*, Lei Wu"
 links = [{ label = "Paper", url = "https://arxiv.org/abs/2509.19189" }]
 
