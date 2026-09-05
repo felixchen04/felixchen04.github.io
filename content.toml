@@ -92,24 +92,27 @@ institution = "Peking University"
 role = "Research · Beijing, China"
 description = "Advisor: Professor Lei Wu. Research on functional scaling laws, optimal learning-rate schedules, and stochastic dynamical systems for SGD."
 
-# 奖项保留简历中的中文名称，避免杜撰官方英文译名。
+# 获奖信息：英文展示，按年份倒序排列。
 [[honors]]
-title = "北京大学校长奖学金"
+title = "President's Scholarship, Peking University"
 year = "2026"
 [[honors]]
-title = "北京大学优秀毕业生"
+title = "Outstanding Graduate, Peking University"
 year = "2026"
 [[honors]]
-title = "九坤数学英才奖学金"
+title = "Ubiquant Mathematics Talent Scholarship"
 year = "2025"
 [[honors]]
-title = "全国大学生数学竞赛一等奖"
+title = "Qin Wanshun and Jin Yunhui Scholarship"
+year = "2025"
+[[honors]]
+title = "First Prize, Chinese Mathematics Competition for College Students"
 year = "2024"
 [[honors]]
-title = "丘成桐大学生数学竞赛优胜奖"
+title = "Honorable Mention, S.-T. Yau College Student Mathematics Contest"
 year = "2024"
 [[honors]]
-title = "中国数学奥林匹克金牌，入选国家集训队"
+title = "Gold Medal, Chinese Mathematical Olympiad; Selected for the National Training Team"
 year = "2021"
 
 # 简历未提供笔记资料，保留现有栏目占位，后续可自行补充。
