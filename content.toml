@@ -87,12 +87,6 @@ institution = "Peking University"
 role = "B.S. in Statistics"
 description = "School of Mathematical Sciences"
 
-[[experience]]
-dates = "May 2024 — Present"
-institution = "Peking University"
-role = "Research · Beijing, China"
-description = "Advisor: Professor Lei Wu. Research on functional scaling laws, optimal learning-rate schedules, and stochastic dynamical systems for SGD."
-
 # 教学经历：复制整个 [[teaching]] 小节即可添加课程。
 [[teaching]]
 dates = "Fall 2026"
