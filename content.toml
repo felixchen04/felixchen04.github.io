@@ -15,6 +15,7 @@ about = "About"
 publications = "Publications"
 education = "Education"
 experience = "Research Experience"
+teaching = "Teaching"
 honors = "Honors & Awards"
 notes = "Notes & Resources"
 interests = "RESEARCH INTERESTS"
@@ -91,6 +92,13 @@ dates = "May 2024 — Present"
 institution = "Peking University"
 role = "Research · Beijing, China"
 description = "Advisor: Professor Lei Wu. Research on functional scaling laws, optimal learning-rate schedules, and stochastic dynamical systems for SGD."
+
+# 教学经历：复制整个 [[teaching]] 小节即可添加课程。
+[[teaching]]
+dates = "Fall 2026"
+institution = "Advanced Mathematics C"
+role = "Teaching Assistant"
+description = "Peking University (PKU)"
 
 # 获奖信息：英文展示，按年份倒序排列。
 [[honors]]

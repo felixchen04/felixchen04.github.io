@@ -52,7 +52,7 @@ def url(value, root, image=False):
 
 def render(data, template, root=ROOT):
     s, p, labels = data['site'], data['profile'], data['labels']
-    sections = [k for k in ('publications', 'education', 'experience', 'honors', 'notes') if data.get(k)]
+    sections = [k for k in ('publications', 'education', 'experience', 'teaching', 'honors', 'notes') if data.get(k)]
     nav = '<a href="#profile">' + text(labels['about']) + '</a>'
     nav += ''.join(f'<a href="#{key}">{text(labels[key])}</a>' for key in sections)
 
@@ -106,7 +106,7 @@ def render(data, template, root=ROOT):
                     if paper.get('abstract', '').strip():
                         main += f'<details><summary>{text(labels["abstract"])}</summary>{paragraphs(paper["abstract"])}</details>'
                     main += '</div></article>'
-        elif key in ('education', 'experience'):
+        elif key in ('education', 'experience', 'teaching'):
             main += '<div class="timeline">'
             for item in data[key]:
                 main += f'''<article class="timeline-entry"><p class="date">{text(item['dates'])}</p><div>

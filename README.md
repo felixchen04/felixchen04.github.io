@@ -15,6 +15,7 @@
 | `[[publications]]` | 研究方向、论文标题、作者、年份、会议、简介、摘要和链接 |
 | `[[education]]` | 教育经历 |
 | `[[experience]]` | 科研与实习经历 |
+| `[[teaching]]` | 教学经历：dates 为学期，institution 为课程名，role 为职务，description 为学校 |
 | `[[honors]]` | 奖项和年份 |
 | `[[notes]]` | 讲义、笔记、链接及状态 |
 
