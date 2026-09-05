@@ -43,8 +43,8 @@ class BuildTests(unittest.TestCase):
         self.data['publications'].append(paper)
         self.data.pop('honors')
         html = self.render()
-        self.assertEqual(html.count('class="paper"'), 4)
-        self.assertEqual(html.count('<details>'), 3)
+        self.assertEqual(html.count('class="paper"'), len(self.data['publications']))
+        self.assertEqual(html.count('<details>'), sum(bool(p.get('abstract', '').strip()) for p in self.data['publications']))
         self.assertNotIn('href="#honors"', html)
         self.assertNotIn('id="honors"', html)
 
@@ -55,7 +55,7 @@ class BuildTests(unittest.TestCase):
         self.assertIn('href="mailto:you@example.edu"', html)
         self.assertIn('href="assets/favicon.svg"', html)
         self.assertNotIn('href=""', html)
-        self.assertIn('coming soon', html)
+        self.assertIn('Google Scholar', html)
 
     def test_invalid_links_fail(self):
         for invalid in ('javascript:alert(1)', '/assets/x.jpg', '../README.md', 'files/missing.pdf', 'assets/../../README.md'):

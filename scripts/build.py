@@ -99,9 +99,10 @@ def render(data, template, root=ROOT):
                     badge = 'badge neutral' if neutral else 'badge'
                     main += f'''<article class="paper"><div class="paper-index">{index:02}</div><div class="paper-content">
 <p class="paper-meta">{text(paper['year'])} <span class="{badge}">{text(paper['venue'])}</span></p>
-<h4>{text(paper['title'])}</h4><p class="authors">{inline(paper['authors'])}</p>
-<p class="paper-description">{inline(paper.get('summary', ''))}</p>
-<div class="paper-links">{links(paper.get('links', []))}</div>'''
+<h4>{text(paper['title'])}</h4><p class="authors">{inline(paper['authors'])}</p>'''
+                    if paper.get('summary', '').strip():
+                        main += f'<p class="paper-description">{inline(paper["summary"])}</p>'
+                    main += f'<div class="paper-links">{links(paper.get("links", []))}</div>'
                     if paper.get('abstract', '').strip():
                         main += f'<details><summary>{text(labels["abstract"])}</summary>{paragraphs(paper["abstract"])}</details>'
                     main += '</div></article>'

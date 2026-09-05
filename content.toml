@@ -4,9 +4,9 @@
 
 [site]
 lang = "en" # 中文页面可以改为 zh-CN，并自行翻译下面的标题
-title = "Your Name · Academic Homepage"
-description = "Your Name — research interests, publications, education, and academic experience."
-updated = "[Month YYYY]"
+title = "Fengling Chen · Academic Homepage"
+description = "Fengling Chen, Ph.D. student in Applied Mathematics at Peking University. Research in machine learning, deep learning theory, optimization, scaling laws, and large language model pretraining."
+updated = "September 2026"
 
 [labels]
 wordmark = "Research"
@@ -23,105 +23,96 @@ coming_soon = "coming soon"
 portrait = "Your portrait here"
 updated = "Last updated"
 back_to_top = "Back to top ↑"
-publications_note = "Selected work & preprints. * denotes equal contribution. All entries below are placeholders."
+publications_note = "* denotes equal contribution."
 
 [profile]
-name = "Your Name"
-name_local = "你的姓名"
-role = "Ph.D. Student · Department of Your Field"
-affiliation = "Your University, City, Country"
+name = "Fengling Chen"
+name_local = "陈风凌"
+role = "Ph.D. Student in Applied Mathematics"
+affiliation = "School of Mathematical Sciences, Peking University · Beijing, China"
 # 上传照片到 assets/profile.jpg 后，在下面填入该相对路径。
 photo = ""
-initials = "YN"
-interests = ["[Research area one]", "[Research area two]", "[Research area three]"]
+initials = "FC"
+interests = ["Machine Learning", "Deep Learning Theory", "Optimization Theory & Scaling Laws", "Large Language Model Pretraining"]
 # 正文以空行分段；支持 **加粗**，不需要编写 HTML。
 bio = '''
-I am a [year]-year Ph.D. student in [Department] at [University], advised by [Advisor Name]. Previously, I received my [Degree] in [Major] from [University].
+I am a Ph.D. student in Applied Mathematics at the School of Mathematical Sciences, Peking University, advised by Professor Lei Wu. I received my B.S. in Statistics from Peking University in June 2026.
 
-My research focuses on **[research area one]** and **[research area two]**. I am interested in understanding [your central research question] and developing [methods or applications] that connect theory with practice.
+My research interests include **machine learning**, **deep learning theory**, **optimization theory and scaling laws**, and **large language model pretraining**.
 '''
 
-# 联系方式：复制整个 [[contacts]] 小节可以增加链接。
+# 联系方式：复制整个小节可以增加链接。
 [[contacts]]
 label = "Email"
-url = "" # 例如 mailto:you@university.edu
+url = "mailto:fenglingchen@stu.pku.edu.cn"
 [[contacts]]
 label = "CV"
-url = "" # 例如 files/cv.pdf
+url = "" # 尚未提供 PDF；准备好后填 files/cv.pdf
 [[contacts]]
 label = "Google Scholar"
-url = ""
+url = "https://scholar.google.com/citations?hl=en&user=uNwxJKsAAAAJ"
 [[contacts]]
 label = "GitHub"
-url = ""
+url = "https://github.com/felixchen04"
 
-# 论文：复制一个完整的 [[publications]] 小节即可添加。
-# 相同 group 的论文会归到同一个研究方向；作者姓名可用 **加粗**。
+# 论文只展示题目、作者、年份、会议与链接；不填写内容说明或摘要。
+# 新增论文时复制一个完整的 [[publications]] 小节。
 [[publications]]
-group = "[Research area one]"
-year = "[YEAR]"
-venue = "[CONFERENCE / JOURNAL]"
+group = "Optimization Theory & Scaling Laws"
+year = "2025"
+venue = "NeurIPS 2025 Spotlight"
 neutral = false
-title = "[Paper title: a concise description of your research contribution]"
-authors = "[Author One]*, **Your Name***, [Author Three], [Advisor Name]"
-summary = "[One sentence explaining the problem, your approach, and the main finding.]"
-abstract = "[Replace this paragraph with your abstract. Introduce the research problem, describe the key idea of your method or analysis, and summarize the principal theoretical or empirical results.]"
-links = [{ label = "Paper", url = "" }, { label = "Code", url = "" }]
+title = "Functional scaling laws in kernel regression: Loss dynamics and learning rate schedules"
+authors = "Binghui Li*, **Fengling Chen***, Zixun Huang*, Lean Wang*, Lei Wu"
+links = [{ label = "Paper", url = "https://arxiv.org/abs/2509.19189" }]
 
 [[publications]]
-group = "[Research area one]"
-year = "[YEAR]"
-venue = "PREPRINT · PLACEHOLDER"
-neutral = true
-title = "[Paper title: understanding an important question in your field]"
-authors = "**Your Name**, [Collaborator Name], [Advisor Name]"
-summary = "[A short, accessible overview of this work and why its findings matter.]"
-abstract = "[Add the full abstract here. You can include the motivation, the central argument, and the implications for future research.]"
-links = [{ label = "Paper", url = "" }]
-
-[[publications]]
-group = "[Research area two]"
-year = "[YEAR]"
-venue = "UNDER REVIEW · PLACEHOLDER"
-neutral = true
-title = "[Paper title: exploring a new method and its applications]"
-authors = "[Author One], **Your Name**, [Author Three]"
-summary = "[Describe the contribution in plain language and highlight one main result.]"
-abstract = "[Add your abstract here. Explain the setting, describe your contribution, and summarize the evidence supporting your conclusions.]"
-links = [{ label = "Paper", url = "" }, { label = "Project", url = "" }]
+group = "Optimization Theory & Scaling Laws"
+year = "2026"
+venue = "COLT 2026"
+neutral = false
+title = "Optimal Learning-Rate Schedules under Functional Scaling Laws: Power Decay and Warmup-Stable-Decay"
+authors = "Binghui Li*, Zilin Wang*, **Fengling Chen**, Shiyang Zhao, Ruiheng Zheng, Lei Wu"
+links = [{ label = "Paper", url = "https://arxiv.org/abs/2602.06797" }]
 
 [[education]]
-dates = "[YYYY] — Present"
-institution = "[University Name]"
-role = "Ph.D. in [Discipline]"
-description = "[Department or School] · Advisor: [Name]"
+dates = "Sep. 2026 — Present"
+institution = "Peking University"
+role = "Ph.D. in Applied Mathematics"
+description = "School of Mathematical Sciences · Advisor: Lei Wu"
 [[education]]
-dates = "[YYYY] — [YYYY]"
-institution = "[University Name]"
-role = "B.S. in [Major]"
-description = "[Department or School]"
+dates = "Sep. 2022 — Jun. 2026"
+institution = "Peking University"
+role = "B.S. in Statistics"
+description = "School of Mathematical Sciences"
 
 [[experience]]
-dates = "[YYYY.MM] — [YYYY.MM]"
-institution = "[Research Lab / Organization]"
-role = "Research Intern · [Team or Group]"
-description = "[Briefly describe the research topic, your role, and the contribution.]"
-[[experience]]
-dates = "[YYYY.MM] — [YYYY.MM]"
-institution = "[University / Research Institute]"
-role = "Visiting Research Student"
-description = "[Research focus] · Mentor: [Name]"
+dates = "May 2024 — Present"
+institution = "Peking University"
+role = "Research · Beijing, China"
+description = "Advisor: Professor Lei Wu. Research on functional scaling laws, optimal learning-rate schedules, and stochastic dynamical systems for SGD."
 
+# 奖项保留简历中的中文名称，避免杜撰官方英文译名。
 [[honors]]
-title = "[Scholarship or Fellowship Name]"
-year = "[YYYY]"
+title = "北京大学校长奖学金"
+year = "2026"
 [[honors]]
-title = "[Academic Award or Research Prize]"
-year = "[YYYY]"
+title = "北京大学优秀毕业生"
+year = "2026"
 [[honors]]
-title = "[Outstanding Graduate / Student Award]"
-year = "[YYYY]"
+title = "九坤数学英才奖学金"
+year = "2025"
+[[honors]]
+title = "全国大学生数学竞赛一等奖"
+year = "2024"
+[[honors]]
+title = "丘成桐大学生数学竞赛优胜奖"
+year = "2024"
+[[honors]]
+title = "中国数学奥林匹克金牌，入选国家集训队"
+year = "2021"
 
+# 简历未提供笔记资料，保留现有栏目占位，后续可自行补充。
 [[notes]]
 title = "[Lecture Notes / Reading Notes Title]"
 description = "[A brief description of the topic and intended audience.]"
