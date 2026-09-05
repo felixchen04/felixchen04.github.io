@@ -115,5 +115,3 @@ files/                      可选的简历、讲义等公开文件
 ```
 
 原有 GitHub Pages 的 Source 保持 GitHub Actions 即可。部署仅发布生成页面、assets 和可选 files；内容源文件不进入网站产物，但公开仓库中的源文件仍可被访问。
-
-信息结构参考 https://alexhuang13.github.io/ ，代码和样式为独立编写。
