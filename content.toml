@@ -35,9 +35,9 @@ affiliation = "School of Mathematical Sciences, Peking University · Beijing, Ch
 photo = ""
 initials = "FC"
 interests = ["Machine Learning", "Deep Learning Theory", "Optimization Theory & Scaling Laws", "Large Language Model Pretraining"]
-# 正文以空行分段；支持 **加粗**，不需要编写 HTML。
+# 正文以空行分段；支持 **加粗** 和 [文字](https://网址)，不需要编写 HTML。
 bio = '''
-I am a Ph.D. student in Applied Mathematics at the School of Mathematical Sciences, Peking University, advised by Professor Lei Wu. I received my B.S. in Statistics from Peking University in June 2026.
+I am a Ph.D. student in Applied Mathematics at the School of Mathematical Sciences, Peking University, advised by Professor [Lei Wu](https://leiwu0.github.io/). I received my B.S. in Statistics from Peking University in June 2026.
 
 My research interests include **machine learning**, **deep learning theory**, **optimization theory and scaling laws**, and **large language model pretraining**.
 '''

@@ -15,8 +15,19 @@ def text(value):
 
 
 def inline(value):
-    # Only **bold** is supported. Raw HTML is always escaped.
-    return re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text(value))
+    # Support bold text and Markdown links; always escape raw HTML.
+    def bold(part):
+        return re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text(part))
+
+    result = []
+    offset = 0
+    for match in re.finditer(r'\[([^\]\n]+)\]\(([^\s()]+)\)', str(value)):
+        result.append(bold(str(value)[offset:match.start()]))
+        address = url(match[2], ROOT)
+        result.append(f'<a href="{address}">{bold(match[1])}</a>')
+        offset = match.end()
+    result.append(bold(str(value)[offset:]))
+    return ''.join(result)
 
 
 def paragraphs(value):
