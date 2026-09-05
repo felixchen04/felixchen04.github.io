@@ -1,0 +1,134 @@
+# 日常只修改本文件。保存并推送后，GitHub 自动生成和部署主页。
+# 等号右侧的普通文字用双引号包裹；多行正文用三个单引号包裹。
+# url = "" 表示暂未提供链接。条目顺序就是网页显示顺序。
+
+[site]
+lang = "en" # 中文页面可以改为 zh-CN，并自行翻译下面的标题
+title = "Your Name · Academic Homepage"
+description = "Your Name — research interests, publications, education, and academic experience."
+updated = "[Month YYYY]"
+
+[labels]
+wordmark = "Research"
+eyebrow = "ACADEMIC HOMEPAGE"
+about = "About"
+publications = "Publications"
+education = "Education"
+experience = "Research Experience"
+honors = "Honors & Awards"
+notes = "Notes & Resources"
+interests = "RESEARCH INTERESTS"
+abstract = "Read abstract"
+coming_soon = "coming soon"
+portrait = "Your portrait here"
+updated = "Last updated"
+back_to_top = "Back to top ↑"
+publications_note = "Selected work & preprints. * denotes equal contribution. All entries below are placeholders."
+
+[profile]
+name = "Your Name"
+name_local = "你的姓名"
+role = "Ph.D. Student · Department of Your Field"
+affiliation = "Your University, City, Country"
+# 上传照片到 assets/profile.jpg 后，在下面填入该相对路径。
+photo = ""
+initials = "YN"
+interests = ["[Research area one]", "[Research area two]", "[Research area three]"]
+# 正文以空行分段；支持 **加粗**，不需要编写 HTML。
+bio = '''
+I am a [year]-year Ph.D. student in [Department] at [University], advised by [Advisor Name]. Previously, I received my [Degree] in [Major] from [University].
+
+My research focuses on **[research area one]** and **[research area two]**. I am interested in understanding [your central research question] and developing [methods or applications] that connect theory with practice.
+'''
+
+# 联系方式：复制整个 [[contacts]] 小节可以增加链接。
+[[contacts]]
+label = "Email"
+url = "" # 例如 mailto:you@university.edu
+[[contacts]]
+label = "CV"
+url = "" # 例如 files/cv.pdf
+[[contacts]]
+label = "Google Scholar"
+url = ""
+[[contacts]]
+label = "GitHub"
+url = ""
+
+# 论文：复制一个完整的 [[publications]] 小节即可添加。
+# 相同 group 的论文会归到同一个研究方向；作者姓名可用 **加粗**。
+[[publications]]
+group = "[Research area one]"
+year = "[YEAR]"
+venue = "[CONFERENCE / JOURNAL]"
+neutral = false
+title = "[Paper title: a concise description of your research contribution]"
+authors = "[Author One]*, **Your Name***, [Author Three], [Advisor Name]"
+summary = "[One sentence explaining the problem, your approach, and the main finding.]"
+abstract = "[Replace this paragraph with your abstract. Introduce the research problem, describe the key idea of your method or analysis, and summarize the principal theoretical or empirical results.]"
+links = [{ label = "Paper", url = "" }, { label = "Code", url = "" }]
+
+[[publications]]
+group = "[Research area one]"
+year = "[YEAR]"
+venue = "PREPRINT · PLACEHOLDER"
+neutral = true
+title = "[Paper title: understanding an important question in your field]"
+authors = "**Your Name**, [Collaborator Name], [Advisor Name]"
+summary = "[A short, accessible overview of this work and why its findings matter.]"
+abstract = "[Add the full abstract here. You can include the motivation, the central argument, and the implications for future research.]"
+links = [{ label = "Paper", url = "" }]
+
+[[publications]]
+group = "[Research area two]"
+year = "[YEAR]"
+venue = "UNDER REVIEW · PLACEHOLDER"
+neutral = true
+title = "[Paper title: exploring a new method and its applications]"
+authors = "[Author One], **Your Name**, [Author Three]"
+summary = "[Describe the contribution in plain language and highlight one main result.]"
+abstract = "[Add your abstract here. Explain the setting, describe your contribution, and summarize the evidence supporting your conclusions.]"
+links = [{ label = "Paper", url = "" }, { label = "Project", url = "" }]
+
+[[education]]
+dates = "[YYYY] — Present"
+institution = "[University Name]"
+role = "Ph.D. in [Discipline]"
+description = "[Department or School] · Advisor: [Name]"
+[[education]]
+dates = "[YYYY] — [YYYY]"
+institution = "[University Name]"
+role = "B.S. in [Major]"
+description = "[Department or School]"
+
+[[experience]]
+dates = "[YYYY.MM] — [YYYY.MM]"
+institution = "[Research Lab / Organization]"
+role = "Research Intern · [Team or Group]"
+description = "[Briefly describe the research topic, your role, and the contribution.]"
+[[experience]]
+dates = "[YYYY.MM] — [YYYY.MM]"
+institution = "[University / Research Institute]"
+role = "Visiting Research Student"
+description = "[Research focus] · Mentor: [Name]"
+
+[[honors]]
+title = "[Scholarship or Fellowship Name]"
+year = "[YYYY]"
+[[honors]]
+title = "[Academic Award or Research Prize]"
+year = "[YYYY]"
+[[honors]]
+title = "[Outstanding Graduate / Student Award]"
+year = "[YYYY]"
+
+[[notes]]
+title = "[Lecture Notes / Reading Notes Title]"
+description = "[A brief description of the topic and intended audience.]"
+url = ""
+status = "In preparation"
+[[notes]]
+title = "[Course / Tutorial Title]"
+description = "[A collection of ideas, explanations, and useful references.]"
+url = "" # 例如 files/notes.pdf
+status = "In preparation"

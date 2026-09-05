@@ -1,75 +1,118 @@
-# Academic Homepage · 科研个人主页
+# 科研个人主页：内容修改指南
 
-简洁、响应式的学术主页模板。内容均为占位文本，包含个人简介、研究方向、分类论文（可展开摘要）、教育经历、科研经历、荣誉及讲义资源。
+日常只修改 `content.toml`，无需编辑 HTML。保存并推送后，GitHub Actions 会自动将内容生成到 HTML 并部署到 https://felixchen04.github.io/ 。页面样式沿用原版。
 
-使用原生 HTML + CSS，无需安装依赖、无需构建，没有追踪脚本或外部字体。双击 `index.html` 即可本地预览；支持 GitHub Pages 的个人域名和仓库子路径。
+## 应该改哪个文件？
 
-## 部署到 GitHub Pages
+`content.toml` 是 UTF-8 纯文本，可用记事本、VS Code 或 GitHub 在线编辑器打开。其中已经包含所有占位内容及中文注释。
 
-1. 在 GitHub 创建一个空的 **Public** 仓库。个人主站建议命名为 `你的用户名.github.io`；也可以使用 `academic-homepage` 等普通名称。创建时不要勾选初始化 README、License 或 .gitignore。
-2. 在本文件夹打开终端，把下面的 `YOUR_USERNAME` 和 `YOUR_REPOSITORY` 替换为实际值，再执行：
-
-   ```powershell
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-   git push -u origin main
-   ```
-
-   若你是通过 ZIP 下载而不是使用已初始化的仓库，先执行 `git init -b main`、`git add .` 和 `git commit -m "Create academic homepage"`。Git 需要配置你自己的用户名和邮箱；推送时按 GitHub 提示登录。
-
-3. 在仓库进入 **Settings → Pages → Build and deployment → Source**，选择 **GitHub Actions**。
-4. 在 **Actions** 打开 **Deploy academic homepage to GitHub Pages**，点击 **Run workflow**，选择 `main`。以后向 `main` 推送内容会自动更新网站。如果首次推送发生在启用 Pages 之前并失败，启用后重新运行即可。
-5. 等待部署完成，在 **Settings → Pages** 查看访问地址：个人主站为 `https://YOUR_USERNAME.github.io/`，普通仓库为 `https://YOUR_USERNAME.github.io/YOUR_REPOSITORY/`。
-
-部署配置遵循 [GitHub Pages 自定义工作流文档](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。工作流仅发布 `index.html`、`assets/` 及可选的 `files/`，不发布 README 等仓库文件。
-
-## 修改内容
-
-所有正文集中在 **`index.html`**，无需理解 JavaScript 或模板语法。
-
-| 内容 | 修改位置 |
+| 分组 | 填写内容 |
 | --- | --- |
-| 浏览器标题和搜索摘要 | `<title>` 和 `meta name="description"` |
-| 顶栏姓名、个人信息、简介 | `PROFILE` 注释附近及 `.wordmark` |
-| 头像 | 把照片放入 `assets/profile.jpg`，按照 HTML 注释把头像占位块替换为 `<img>` |
-| 论文、作者、会议和摘要 | `PUBLICATIONS` 下的 `<article class="paper">`，复制整块即可添加论文 |
-| 教育、经历、奖项及笔记 | 对应标题下的条目 |
-| 页脚日期 | 手动修改 `Last updated` |
-| 主题色和字体 | `assets/style.css` 顶部 `:root` |
-| 浏览器图标 | `assets/favicon.svg` 中的字母和颜色 |
+| `[site]` | 浏览器标题、搜索描述、语言、更新日期 |
+| `[labels]` | 导航与栏目标题，换中文时在这里翻译 |
+| `[profile]` | 姓名、身份、单位、头像、研究方向、个人简介 |
+| `[[contacts]]` | 邮箱、简历、Google Scholar、GitHub 等链接 |
+| `[[publications]]` | 研究方向、论文标题、作者、年份、会议、简介、摘要和链接 |
+| `[[education]]` | 教育经历 |
+| `[[experience]]` | 科研与实习经历 |
+| `[[honors]]` | 奖项和年份 |
+| `[[notes]]` | 讲义、笔记、链接及状态 |
 
-示例中的身份、论文和奖项都不是你的真实信息，请在正式展示前替换。模板将尚未填写的外部链接显示为普通文字，避免访客点到无效页面。
+等号左边的字段名保持不变，修改右边的值。`[profile]` 这样的单方括号分组只能出现一次；`[[publications]]` 这样的双方括号表示可重复条目。
 
-### 添加邮箱、简历和学术链接
+## 填写示例
 
-在 `.contact-links` 内，将相应的 `<span>...</span>` 替换为真实链接，例如：
+```toml
+[profile]
+name = "Your Name"
+name_local = "你的中文姓名"
+role = "Ph.D. Student · Department of Mathematics"
+affiliation = "Your University"
+photo = "assets/profile.jpg"
+initials = "YN"
+interests = ["Machine Learning", "Optimization"]
+bio = '''
+这里写第一段个人简介，可用 **加粗** 强调文字。
 
-```html
-<a href="mailto:you@university.edu">Email ↗</a>
-<a href="files/cv.pdf">CV ↗</a>
-<a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar ↗</a>
-<a href="https://github.com/YOUR_USERNAME">GitHub ↗</a>
+空一行开始下一段。可以写中文，也可以写英文。
+'''
 ```
 
-创建 `files/` 文件夹后放入真实 PDF；默认工作流会自动发布该文件夹。这里的文件都会公开，请只放适合公开分享的资料。
+请修改已有分组，不要在文件末尾再次添加同名 `[profile]`。正文是纯文本，不是完整 Markdown：简介、作者、论文概要、摘要及经历/笔记描述支持 `**加粗**`；简介和摘要还支持空行分段。链接使用专用 `url` 字段，HTML 标签会按普通文字显示。
 
-论文链接同样将 `.pending` 占位文字替换为 `<a href="实际论文地址">Paper ↗</a>`；笔记标题也可改成 `<a href="files/notes.pdf">笔记名称</a>`。
+普通字符串用双引号包裹；需要在其中写英文双引号时，用 `\"`。长摘要也可以像 `bio` 一样用三单引号包裹并换行；多行文字内部不要写连续三个单引号。保存编码选择 UTF-8。
 
-使用 `assets/...`、`files/...` 这样的相对路径，避免 `/assets/...`，从而兼容普通仓库的子路径。文件名大小写必须与链接一致。
+### 新增论文
 
-### 使用中文
+复制一个完整的 `[[publications]]` 小节，再修改其字段：
 
-将 `<html lang="en">` 改成 `<html lang="zh-CN">`，再直接翻译正文和导航即可。样式已包含中文字体回退。
+```toml
+[[publications]]
+group = "Machine Learning"
+year = "2026"
+venue = "Preprint"
+neutral = true
+title = "Your Paper Title"
+authors = "**Your Name**, Collaborator Name"
+summary = "一句话介绍这篇论文。"
+abstract = '''
+这里填写完整摘要。
+'''
+links = [
+  { label = "Paper", url = "https://arxiv.org/abs/YOUR_ID" },
+  { label = "Code", url = "https://github.com/YOUR_USERNAME/YOUR_REPO" },
+]
+```
+
+示例网址须替换成真实地址。相同 `group` 自动归入同一研究方向，分组按首次出现顺序排列，组内按文件顺序排列。`neutral = true` 是灰色会议标签，`false` 是蓝色；不要给 true/false 加引号。摘要留空 `abstract = ""` 时不显示展开按钮。
+
+新增教育、经历、奖项、笔记或联系方式同理，复制对应双方括号小节即可。删除整个条目即可移除它；删除某栏目的全部条目后，该栏目和导航入口自动隐藏。
+
+### 头像、简历、邮箱与论文链接
+
+- 头像放入 `assets/profile.jpg`，再填写 `photo = "assets/profile.jpg"`。空字符串保留占位头像。
+- 简历和讲义放入自行创建的 `files/` 文件夹，例如 `files/cv.pdf`，链接填写同样的相对路径。
+- 邮箱填写 `url = "mailto:you@university.edu"`。
+- 其他外部链接填写完整 `https://...` 地址。尚未准备好的链接留空，网页显示占位文字。
+- 本地链接只支持 `assets/` 和 `files/` 下已存在的文件，大小写必须一致；文件名尽量不要含空格。生成器会检查文件是否存在。
+- 页脚日期由 `[site].updated` 手动填写；`[site].title` 和 `description` 也请同步更新。
+
+## 修改后需要运行脚本吗？
+
+**更新线上网站：不需要。** 修改并推送后，GitHub 自动运行生成脚本，再部署生成的 HTML：
+
+```powershell
+git add .
+git commit -m "Update homepage content"
+git push
+```
+
+这次首次迁移需要将 `content.toml`、`scripts/`、`templates/`、更新后的工作流和其他改动一起提交。以后通常只修改并提交内容文件和新增的图片/PDF。也可以在 GitHub 直接编辑 `content.toml` 并提交到 `main`，效果相同。
+
+到仓库 Actions 等待绿色对勾后刷新网站。语法或文件路径有误时，生成步骤会失败并提示原因，原有线上版本保留。
+
+**本地预览：需要先生成一次。** 安装 Python 3.11 或更高版本，然后在项目文件夹运行：
+
+```powershell
+py -3 scripts/build.py
+```
+
+如果你的 Python 命令是 `python`，则运行 `python scripts/build.py`。无需安装任何第三方包。生成后双击 `index.html`，或刷新已经打开的页面。
+
+仓库中的 `index.html` 是预览快照，修改 TOML 不会自动更新本地快照；GitHub 每次部署都会重新生成，所以无需为了线上发布手动更新它，也不会自动把生成结果提交回仓库。不要直接编辑这个文件，修改会在下次生成时被覆盖。
 
 ## 文件结构
 
 ```text
-index.html                 页面及所有个人内容
-assets/style.css           页面样式和手机适配
-assets/favicon.svg         站点图标
-.github/workflows/pages.yml GitHub Pages 自动部署
-.nojekyll                  禁用 Jekyll 处理
-.gitignore                排除临时文件
-README.md                 使用说明
+content.toml                日常编辑的唯一内容来源
+scripts/build.py            生成脚本（Python 标准库）
+templates/page.html         页面外壳模板（日常不用改）
+index.html                  生成的静态页面 / 本地预览快照
+assets/                     样式、图标和个人头像
+files/                      可选的简历、讲义等公开文件
+.github/workflows/pages.yml 自动生成和部署
 ```
 
-信息结构参考 [Zixun Huang 的个人主页](https://alexhuang13.github.io/)，代码与排版为本模板重新编写，没有复制其个人资料、头像或论文内容。
+原有 GitHub Pages 的 Source 保持 GitHub Actions 即可。部署仅发布生成页面、assets 和可选 files；内容源文件不进入网站产物，但公开仓库中的源文件仍可被访问。
+
+信息结构参考 https://alexhuang13.github.io/ ，代码和样式为独立编写。
